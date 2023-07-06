@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EmployeeAccountingSystem
+namespace EmployeeAccountingSystem.AddingEmployee
 {
-    public partial class WorkingSpaceForm : Form
+    public partial class AddingEmployeeForm : Form
     {
-        public WorkingSpaceForm()
+        public AddingEmployeeForm()
         {
             InitializeComponent();
         }

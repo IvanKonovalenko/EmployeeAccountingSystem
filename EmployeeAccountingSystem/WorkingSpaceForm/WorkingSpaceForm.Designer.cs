@@ -217,6 +217,7 @@
             AddEmplyeeButton.TabIndex = 21;
             AddEmplyeeButton.Text = "Add Employee";
             AddEmplyeeButton.UseVisualStyleBackColor = true;
+            AddEmplyeeButton.Click += AddEmplyeeButton_Click;
             // 
             // WorkingSpaceForm
             // 
