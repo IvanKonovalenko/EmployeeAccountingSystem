@@ -13,10 +13,13 @@ namespace EmployeeAccountingSystem.AddingEmployee
 {
     public partial class AddingEmployeeForm : Form
     {
+        Account account;
+
         DataBase1 _dataBase = new DataBase1();
-        public AddingEmployeeForm()
+        public AddingEmployeeForm(Account account)
         {
             InitializeComponent();
+            this.account = account;
         }
 
         private void AddEmplyeeButton_Click(object sender, EventArgs e)

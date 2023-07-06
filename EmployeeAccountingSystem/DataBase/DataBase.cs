@@ -9,7 +9,7 @@ namespace EmployeeAccountingSystem.DataBase
 {
     public class DataBase1
     {
-        SqlConnection _connection = new SqlConnection(@"Data Source=IVAN\SQLEXPRESS; Initial Catalog=EmployeeAccountingSystemDB; Intergrated Security=true");
+        SqlConnection _connection = new SqlConnection(@"Data Source=IVAN\SQLEXPRESS; Initial Catalog=EmployeeAccountingSystemDB; Integrated Security=True");
         public void OpenConnection()
         {
             if (_connection.State == System.Data.ConnectionState.Closed) _connection.Open();

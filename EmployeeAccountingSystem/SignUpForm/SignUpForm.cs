@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,33 @@ namespace EmployeeAccountingSystem
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(UsernameTextBox.Text)|| 
+                String.IsNullOrEmpty(PasswordTextBox.Text)|| 
+                String.IsNullOrEmpty(RetryPassword.Text)|| 
+                PasswordTextBox.Text!=RetryPassword.Text) 
+                { Status.Text = "Error"; return;}
+
+
+            string query = $"SELECT * FROM Accounts WHERE UserName='{UsernameTextBox.Text}';";
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+            SqlCommand comand = new SqlCommand(query, _dataBase.GetConnection());
+            sqlDataAdapter.SelectCommand = comand;
+            sqlDataAdapter.Fill(table);
+            if (table.Rows.Count != 0) { Status.Text = "Error"; return; }
+
+
+            comand = new SqlCommand($"INSERT INTO Accounts(UserName,Passwordd) VALUES ('{UsernameTextBox.Text}', '{PasswordTextBox.Text}')", _dataBase.GetConnection());
+            _dataBase.OpenConnection();
+            if (comand.ExecuteNonQuery()==1)
+            {
+                Status.Text = "Success";
+            }
+            else
+            {
+                Status.Text = "Error";
+            }
+            _dataBase.CloseConnection();
 
         }
     }
