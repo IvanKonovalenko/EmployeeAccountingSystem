@@ -103,6 +103,7 @@
             // 
             // Status
             // 
+            Status.BackColor = SystemColors.Window;
             Status.Location = new Point(99, 426);
             Status.Name = "Status";
             Status.ReadOnly = true;
