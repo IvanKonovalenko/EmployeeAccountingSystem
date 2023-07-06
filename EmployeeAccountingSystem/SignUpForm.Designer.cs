@@ -1,14 +1,14 @@
 ﻿namespace EmployeeAccountingSystem
 {
-    partial class LogInForm
+    partial class SignUpForm
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,8 +23,8 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -32,9 +32,10 @@
             UsernameTextBox = new TextBox();
             PasswordTextBox = new TextBox();
             PasswordLabel = new Label();
-            LoginLabel = new Label();
-            LogInButton = new Button();
+            SignupLabel = new Label();
             SignUpButton = new Button();
+            RetryPassword = new TextBox();
+            Status = new TextBox();
             SuspendLayout();
             // 
             // UsernameLabel
@@ -72,53 +73,59 @@
             PasswordLabel.TabIndex = 3;
             PasswordLabel.Text = "Password";
             // 
-            // LoginLabel
+            // SignupLabel
             // 
-            LoginLabel.AutoSize = true;
-            LoginLabel.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LoginLabel.Location = new Point(125, 50);
-            LoginLabel.Name = "LoginLabel";
-            LoginLabel.Size = new Size(91, 37);
-            LoginLabel.TabIndex = 4;
-            LoginLabel.Text = "Log In";
-            // 
-            // LogInButton
-            // 
-            LogInButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            LogInButton.Location = new Point(12, 357);
-            LogInButton.Name = "LogInButton";
-            LogInButton.Size = new Size(152, 30);
-            LogInButton.TabIndex = 5;
-            LogInButton.Text = "Log In";
-            LogInButton.UseVisualStyleBackColor = true;
+            SignupLabel.AutoSize = true;
+            SignupLabel.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            SignupLabel.Location = new Point(125, 50);
+            SignupLabel.Name = "SignupLabel";
+            SignupLabel.Size = new Size(111, 37);
+            SignupLabel.TabIndex = 4;
+            SignupLabel.Text = "Sign Up";
             // 
             // SignUpButton
             // 
             SignUpButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            SignUpButton.Location = new Point(170, 357);
+            SignUpButton.Location = new Point(99, 354);
             SignUpButton.Name = "SignUpButton";
             SignUpButton.Size = new Size(152, 30);
             SignUpButton.TabIndex = 6;
             SignUpButton.Text = "Sign Up";
             SignUpButton.UseVisualStyleBackColor = true;
-            SignUpButton.Click += SignUpButton_Click;
             // 
-            // LogInForm
+            // RetryPassword
+            // 
+            RetryPassword.Location = new Point(99, 286);
+            RetryPassword.Name = "RetryPassword";
+            RetryPassword.PasswordChar = '*';
+            RetryPassword.Size = new Size(152, 23);
+            RetryPassword.TabIndex = 7;
+            // 
+            // Status
+            // 
+            Status.Location = new Point(99, 426);
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            Status.Size = new Size(152, 23);
+            Status.TabIndex = 8;
+            // 
+            // SignUpForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(334, 461);
+            Controls.Add(Status);
+            Controls.Add(RetryPassword);
             Controls.Add(SignUpButton);
-            Controls.Add(LogInButton);
-            Controls.Add(LoginLabel);
+            Controls.Add(SignupLabel);
             Controls.Add(PasswordLabel);
             Controls.Add(PasswordTextBox);
             Controls.Add(UsernameTextBox);
             Controls.Add(UsernameLabel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "LogInForm";
-            Text = "EAS (Log In)";
+            Name = "SignUpForm";
+            Text = "EAS (Sign Up)";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -129,8 +136,9 @@
         private TextBox UsernameTextBox;
         private TextBox PasswordTextBox;
         private Label PasswordLabel;
-        private Label LoginLabel;
-        private Button LogInButton;
+        private Label SignupLabel;
         private Button SignUpButton;
+        private TextBox RetryPassword;
+        private TextBox Status;
     }
 }
