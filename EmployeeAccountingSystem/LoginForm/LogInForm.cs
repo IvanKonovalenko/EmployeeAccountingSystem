@@ -1,7 +1,9 @@
+using EmployeeAccountingSystem.DataBase;
 namespace EmployeeAccountingSystem
 {
     public partial class LogInForm : Form
     {
+        DataBase1 _dataBase= new DataBase1();
         SignUpForm _signUpForm;
         WorkingSpaceForm _workingSpaceForm;
         public LogInForm()

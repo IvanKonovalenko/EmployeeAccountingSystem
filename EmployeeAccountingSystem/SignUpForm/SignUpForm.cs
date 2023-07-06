@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeAccountingSystem.DataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace EmployeeAccountingSystem
 {
     public partial class SignUpForm : Form
     {
+        DataBase1 _dataBase = new DataBase1();
         public SignUpForm()
         {
             InitializeComponent();
+        }
+
+        private void SignUpButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

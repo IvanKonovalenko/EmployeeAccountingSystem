@@ -182,6 +182,7 @@
             AddEmplyeeButton.TabIndex = 35;
             AddEmplyeeButton.Text = "Add";
             AddEmplyeeButton.UseVisualStyleBackColor = true;
+            AddEmplyeeButton.Click += AddEmplyeeButton_Click;
             // 
             // Status
             // 

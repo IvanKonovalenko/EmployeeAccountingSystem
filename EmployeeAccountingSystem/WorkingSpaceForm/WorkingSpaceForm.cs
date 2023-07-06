@@ -1,4 +1,5 @@
 ﻿using EmployeeAccountingSystem.AddingEmployee;
+using EmployeeAccountingSystem.DataBase;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace EmployeeAccountingSystem
 {
     public partial class WorkingSpaceForm : Form
     {
+        DataBase1 _dataBase = new DataBase1();
         AddingEmployeeForm _addingEmployeeForm;
         public WorkingSpaceForm()
         {

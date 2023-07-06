@@ -92,6 +92,7 @@
             SignUpButton.TabIndex = 6;
             SignUpButton.Text = "Sign Up";
             SignUpButton.UseVisualStyleBackColor = true;
+            SignUpButton.Click += SignUpButton_Click;
             // 
             // RetryPassword
             // 
