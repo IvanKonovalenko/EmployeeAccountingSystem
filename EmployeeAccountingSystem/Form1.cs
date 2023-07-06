@@ -1,8 +1,8 @@
 namespace EmployeeAccountingSystem
 {
-    public partial class LogInForm : Form
+    public partial class Form1 : Form
     {
-        public LogInForm()
+        public Form1()
         {
             InitializeComponent();
         }
