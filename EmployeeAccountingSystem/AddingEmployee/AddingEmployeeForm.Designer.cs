@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             JobTitleLabel = new Label();
-            textBox2 = new TextBox();
+            JobTitleTextBox = new TextBox();
             CityLabel = new Label();
             CityTextBox = new TextBox();
             SalaryLabel = new Label();
@@ -56,13 +56,13 @@
             JobTitleLabel.TabIndex = 34;
             JobTitleLabel.Text = "Job  Title";
             // 
-            // textBox2
+            // JobTitleTextBox
             // 
-            textBox2.BackColor = SystemColors.Window;
-            textBox2.Location = new Point(40, 294);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(186, 23);
-            textBox2.TabIndex = 33;
+            JobTitleTextBox.BackColor = SystemColors.Window;
+            JobTitleTextBox.Location = new Point(40, 294);
+            JobTitleTextBox.Name = "JobTitleTextBox";
+            JobTitleTextBox.Size = new Size(186, 23);
+            JobTitleTextBox.TabIndex = 33;
             // 
             // CityLabel
             // 
@@ -136,6 +136,7 @@
             DateOfBirthTextBox.Name = "DateOfBirthTextBox";
             DateOfBirthTextBox.Size = new Size(186, 23);
             DateOfBirthTextBox.TabIndex = 25;
+            DateOfBirthTextBox.Text = "YYYY-MM-DD";
             // 
             // SurnameLabel
             // 
@@ -201,7 +202,7 @@
             Controls.Add(Status);
             Controls.Add(AddEmplyeeButton);
             Controls.Add(JobTitleLabel);
-            Controls.Add(textBox2);
+            Controls.Add(JobTitleTextBox);
             Controls.Add(CityLabel);
             Controls.Add(CityTextBox);
             Controls.Add(SalaryLabel);
@@ -217,7 +218,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "AddingEmployeeForm";
-            Text = "EAS(AddingEmployee)";
+            Text = "EAS (AddingEmployee)";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -225,7 +226,7 @@
         #endregion
 
         private Label JobTitleLabel;
-        private TextBox textBox2;
+        private TextBox JobTitleTextBox;
         private Label CityLabel;
         private TextBox CityTextBox;
         private Label SalaryLabel;

@@ -86,7 +86,7 @@
             // SignUpButton
             // 
             SignUpButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            SignUpButton.Location = new Point(99, 354);
+            SignUpButton.Location = new Point(99, 339);
             SignUpButton.Name = "SignUpButton";
             SignUpButton.Size = new Size(152, 30);
             SignUpButton.TabIndex = 6;
