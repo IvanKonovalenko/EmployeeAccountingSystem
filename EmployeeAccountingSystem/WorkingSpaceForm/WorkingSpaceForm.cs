@@ -14,7 +14,7 @@ using System.Windows.Forms;
 namespace EmployeeAccountingSystem
 {
     public partial class WorkingSpaceForm : Form
-    {       
+    {
         DataBase1 _dataBase = new DataBase1();
         Account account;
         AddingEmployeeForm _addingEmployeeForm;
@@ -31,9 +31,9 @@ namespace EmployeeAccountingSystem
             SqlCommand sqlCommand = new SqlCommand(query, _dataBase.GetConnection());
             List<string> values = new List<string>();
             SqlDataReader reader = sqlCommand.ExecuteReader();
-            while (reader.Read()) 
+            while (reader.Read())
             {
-                string value=reader.GetGuid(0).ToString();
+                string value = reader.GetGuid(0).ToString();
                 values.Add(value);
             }
             comboBox1.Items.Clear();
@@ -43,16 +43,38 @@ namespace EmployeeAccountingSystem
             }
             _dataBase.CloseConnection();
         }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _dataBase.OpenConnection();
+            string ID = comboBox1.SelectedItem.ToString();
+            string query = $"SELECT Name, Surname, DateOfBirth,PhoneNumber,Salary,City,JobTitle FROM Employee WHERE Id='{ID}';";
+            SqlCommand sqlCommand = new SqlCommand(query, _dataBase.GetConnection());
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                NameTextBox.Text = reader.GetString(0);
+                SurnameTextBox.Text = reader.GetString(1);
+                DateOfBirthTextBox.Text = reader.GetDateTime(2).ToString();
+                PhoneNumberTextBox.Text = reader.GetString(3);
+                SalaryTextBox.Text = reader.GetDecimal(4).ToString();
+                CityTextBox.Text = reader.GetString(5);
+                JobTitleTextBox.Text = reader.GetString(6);
+                IDTextBox.Text = ID;
+
+            }
+            _dataBase.CloseConnection();
+        }
+
+
         private void AddEmplyeeButton_Click(object sender, EventArgs e)
         {
             if (_addingEmployeeForm == null || _addingEmployeeForm.IsDisposed)
             {
                 _addingEmployeeForm = new(account);
                 _addingEmployeeForm.ShowDialog();
+                _addingEmployeeForm.Dispose();
                 UpdateComboBox();
             }
         }
-
-       
     }
 }

@@ -29,7 +29,7 @@ namespace EmployeeAccountingSystem.AddingEmployee
             if (String.IsNullOrEmpty(NameTextBox.Text) || String.IsNullOrEmpty(SurnameTextBox.Text) ||
                 String.IsNullOrEmpty(DateOfBirthTextBox.Text) || String.IsNullOrEmpty(PhoneNumberTextBox.Text) ||
                 String.IsNullOrEmpty(SalaryTextBox.Text) || String.IsNullOrEmpty(CityTextBox.Text) ||
-                String.IsNullOrEmpty(JobTitleTextBox.Text)) { Status.Text = "Error"; return; }
+                String.IsNullOrEmpty(JobTitleTextBox.Text)) { Status.ForeColor = Color.Red; Status.Text = "Error"; return; }
             string query = $"INSERT INTO Employee(Name,Surname,DateOfBirth,PhoneNumber,Salary,City,JobTitle,UserNAme) VALUES('{NameTextBox.Text}','{SurnameTextBox.Text}','{DateOfBirthTextBox.Text}','{PhoneNumberTextBox.Text}','{SalaryTextBox.Text}','{CityTextBox.Text}','{JobTitleTextBox.Text}','{account.UserName}');";
             try
             {
@@ -37,15 +37,18 @@ namespace EmployeeAccountingSystem.AddingEmployee
                 _dataBase.OpenConnection();
                 if (sqlCommand.ExecuteNonQuery() == 1)
                 {
+                    Status.ForeColor = Color.Green;
                     Status.Text = "Success";
                 }
                 else
                 {
+                    Status.ForeColor = Color.Red;
                     Status.Text = "Error";
                 }
             }
             catch
             {
+                Status.ForeColor = Color.Red;
                 Status.Text = "Error";
             }
             _dataBase.CloseConnection();

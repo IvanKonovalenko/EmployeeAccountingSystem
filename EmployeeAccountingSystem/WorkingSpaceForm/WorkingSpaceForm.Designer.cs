@@ -38,9 +38,9 @@
             PhoneNumberLabel = new Label();
             PhoneNumberTextBox = new TextBox();
             IdLabel = new Label();
-            textBox1 = new TextBox();
+            IDTextBox = new TextBox();
             JobTitleLabel = new Label();
-            textBox2 = new TextBox();
+            JobTitleTextBox = new TextBox();
             CityLabel = new Label();
             CityTextBox = new TextBox();
             SalaryLabel = new Label();
@@ -51,10 +51,11 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(39, 79);
+            comboBox1.Location = new Point(12, 79);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(186, 23);
+            comboBox1.Size = new Size(264, 23);
             comboBox1.TabIndex = 0;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // NameTextBox
             // 
@@ -142,14 +143,14 @@
             IdLabel.TabIndex = 20;
             IdLabel.Text = "ID";
             // 
-            // textBox1
+            // IDTextBox
             // 
-            textBox1.BackColor = SystemColors.Window;
-            textBox1.Location = new Point(502, 288);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(186, 23);
-            textBox1.TabIndex = 19;
+            IDTextBox.BackColor = SystemColors.Window;
+            IDTextBox.Location = new Point(502, 288);
+            IDTextBox.Name = "IDTextBox";
+            IDTextBox.ReadOnly = true;
+            IDTextBox.Size = new Size(186, 23);
+            IDTextBox.TabIndex = 19;
             // 
             // JobTitleLabel
             // 
@@ -161,14 +162,14 @@
             JobTitleLabel.TabIndex = 18;
             JobTitleLabel.Text = "Job  Title";
             // 
-            // textBox2
+            // JobTitleTextBox
             // 
-            textBox2.BackColor = SystemColors.Window;
-            textBox2.Location = new Point(282, 288);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(186, 23);
-            textBox2.TabIndex = 17;
+            JobTitleTextBox.BackColor = SystemColors.Window;
+            JobTitleTextBox.Location = new Point(282, 288);
+            JobTitleTextBox.Name = "JobTitleTextBox";
+            JobTitleTextBox.ReadOnly = true;
+            JobTitleTextBox.Size = new Size(186, 23);
+            JobTitleTextBox.TabIndex = 17;
             // 
             // CityLabel
             // 
@@ -226,9 +227,9 @@
             ClientSize = new Size(734, 461);
             Controls.Add(AddEmplyeeButton);
             Controls.Add(IdLabel);
-            Controls.Add(textBox1);
+            Controls.Add(IDTextBox);
             Controls.Add(JobTitleLabel);
-            Controls.Add(textBox2);
+            Controls.Add(JobTitleTextBox);
             Controls.Add(CityLabel);
             Controls.Add(CityTextBox);
             Controls.Add(SalaryLabel);
@@ -262,9 +263,9 @@
         private Label PhoneNumberLabel;
         private TextBox PhoneNumberTextBox;
         private Label IdLabel;
-        private TextBox textBox1;
+        private TextBox IDTextBox;
         private Label JobTitleLabel;
-        private TextBox textBox2;
+        private TextBox JobTitleTextBox;
         private Label CityLabel;
         private TextBox CityTextBox;
         private Label SalaryLabel;

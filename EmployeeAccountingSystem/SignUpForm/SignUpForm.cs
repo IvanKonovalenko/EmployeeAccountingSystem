@@ -26,7 +26,7 @@ namespace EmployeeAccountingSystem
                 String.IsNullOrEmpty(PasswordTextBox.Text) ||
                 String.IsNullOrEmpty(RetryPassword.Text) ||
                 PasswordTextBox.Text != RetryPassword.Text)
-            { Status.Text = "Error"; return; }
+            { Status.ForeColor = Color.Red; Status.Text = "Error"; return; }
 
 
             string query = $"SELECT * FROM Accounts WHERE UserName='{UsernameTextBox.Text}';";
@@ -35,21 +35,24 @@ namespace EmployeeAccountingSystem
             SqlCommand command = new SqlCommand(query, _dataBase.GetConnection());
             sqlDataAdapter.SelectCommand = command;
             sqlDataAdapter.Fill(table);
-            if (table.Rows.Count != 0) { Status.Text = "Error"; return; }
+            if (table.Rows.Count != 0) { Status.ForeColor = Color.Red; Status.Text = "Error"; return; }
 
             query = $"INSERT INTO Accounts(UserName,Passwordd) VALUES ('{UsernameTextBox.Text}', '{PasswordTextBox.Text}')";
             command = new SqlCommand(query, _dataBase.GetConnection());
             _dataBase.OpenConnection();
             if (command.ExecuteNonQuery() == 1)
             {
+                Status.ForeColor = Color.Green;
                 Status.Text = "Success";
             }
             else
             {
+                Status.ForeColor = Color.Red;
                 Status.Text = "Error";
             }
             _dataBase.CloseConnection();
 
         }
+
     }
 }

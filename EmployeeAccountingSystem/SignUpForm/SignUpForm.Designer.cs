@@ -35,7 +35,7 @@
             SignupLabel = new Label();
             SignUpButton = new Button();
             RetryPassword = new TextBox();
-            Status = new TextBox();
+            Status = new Label();
             SuspendLayout();
             // 
             // UsernameLabel
@@ -104,11 +104,11 @@
             // 
             // Status
             // 
-            Status.BackColor = SystemColors.Window;
-            Status.Location = new Point(99, 426);
+            Status.AutoSize = true;
+            Status.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Status.Location = new Point(149, 382);
             Status.Name = "Status";
-            Status.ReadOnly = true;
-            Status.Size = new Size(152, 23);
+            Status.Size = new Size(0, 21);
             Status.TabIndex = 8;
             // 
             // SignUpForm
@@ -141,6 +141,6 @@
         private Label SignupLabel;
         private Button SignUpButton;
         private TextBox RetryPassword;
-        private TextBox Status;
+        private Label Status;
     }
 }

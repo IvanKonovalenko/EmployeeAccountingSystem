@@ -43,7 +43,7 @@
             NameLabel = new Label();
             NameTextBox = new TextBox();
             AddEmplyeeButton = new Button();
-            Status = new TextBox();
+            Status = new Label();
             SuspendLayout();
             // 
             // JobTitleLabel
@@ -187,11 +187,11 @@
             // 
             // Status
             // 
-            Status.BackColor = SystemColors.Window;
-            Status.Location = new Point(196, 352);
+            Status.AutoSize = true;
+            Status.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Status.Location = new Point(261, 363);
             Status.Name = "Status";
-            Status.ReadOnly = true;
-            Status.Size = new Size(186, 23);
+            Status.Size = new Size(0, 21);
             Status.TabIndex = 36;
             // 
             // AddingEmployeeForm
@@ -240,6 +240,6 @@
         private Label NameLabel;
         private TextBox NameTextBox;
         private Button AddEmplyeeButton;
-        private TextBox Status;
+        private Label Status;
     }
 }
