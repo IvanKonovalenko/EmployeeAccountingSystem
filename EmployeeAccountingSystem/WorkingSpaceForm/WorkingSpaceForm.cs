@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EmployeeAccountingSystem
 {
@@ -42,9 +43,11 @@ namespace EmployeeAccountingSystem
                 comboBox1.Items.Add(item);
             }
             _dataBase.CloseConnection();
+            
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Status.Text = "";
             _dataBase.OpenConnection();
             string ID = comboBox1.SelectedItem.ToString();
             string query = $"SELECT Name, Surname, DateOfBirth,PhoneNumber,Salary,City,JobTitle FROM Employee WHERE Id='{ID}';";
@@ -75,6 +78,35 @@ namespace EmployeeAccountingSystem
                 _addingEmployeeForm.Dispose();
                 UpdateComboBox();
             }
+        }
+
+        private void DeleteEmployeeButton_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(comboBox1?.SelectedItem?.ToString())) return;
+            string ID = comboBox1.SelectedItem.ToString();
+            string query = $"DELETE FROM Employee WHERE Id='{ID}';";
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand(query, _dataBase.GetConnection());
+                _dataBase.OpenConnection();
+                if (sqlCommand.ExecuteNonQuery() == 1)
+                {
+                    Status.ForeColor = Color.Green;
+                    Status.Text = "Success";
+                    UpdateComboBox();
+                }
+                else
+                {
+                    Status.ForeColor = Color.Red;
+                    Status.Text = "Error";
+                }
+            }
+            catch
+            {
+                Status.ForeColor = Color.Red;
+                Status.Text = "Error";
+            }
+            _dataBase.CloseConnection();
         }
     }
 }

@@ -46,6 +46,8 @@
             SalaryLabel = new Label();
             SalaryTextBox = new TextBox();
             AddEmplyeeButton = new Button();
+            DeleteEmployeeButton = new Button();
+            Status = new Label();
             SuspendLayout();
             // 
             // comboBox1
@@ -220,11 +222,33 @@
             AddEmplyeeButton.UseVisualStyleBackColor = true;
             AddEmplyeeButton.Click += AddEmplyeeButton_Click;
             // 
+            // DeleteEmployeeButton
+            // 
+            DeleteEmployeeButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DeleteEmployeeButton.Location = new Point(282, 359);
+            DeleteEmployeeButton.Name = "DeleteEmployeeButton";
+            DeleteEmployeeButton.Size = new Size(186, 29);
+            DeleteEmployeeButton.TabIndex = 22;
+            DeleteEmployeeButton.Text = "Delete Employee";
+            DeleteEmployeeButton.UseVisualStyleBackColor = true;
+            DeleteEmployeeButton.Click += DeleteEmployeeButton_Click;
+            // 
+            // Status
+            // 
+            Status.AutoSize = true;
+            Status.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Status.Location = new Point(282, 335);
+            Status.Name = "Status";
+            Status.Size = new Size(0, 21);
+            Status.TabIndex = 23;
+            // 
             // WorkingSpaceForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(734, 461);
+            Controls.Add(Status);
+            Controls.Add(DeleteEmployeeButton);
             Controls.Add(AddEmplyeeButton);
             Controls.Add(IdLabel);
             Controls.Add(IDTextBox);
@@ -271,5 +295,7 @@
         private Label SalaryLabel;
         private TextBox SalaryTextBox;
         private Button AddEmplyeeButton;
+        private Button DeleteEmployeeButton;
+        private Label Status;
     }
 }
